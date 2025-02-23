@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пора завтракать, котики!</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🏠 Пора будить котиков! 🐱</h1>
+            <div id="messageBoard">Нужно разбудить всех котиков к завтраку!</div>
+            <div class="audio-control">
+                <button id="toggleMusic" class="music-button">🔈 Включить музыку</button>
+                <input type="range" id="volumeSlider" min="0" max="1" step="0.1" value="0.5">
+            </div>
+        </div>
+
+        <div class="rooms-grid">
+            <div class="room">
+                <div class="room-info">
+                    <div class="room-name">🛏️ Спальня</div>
+                </div>
+                <div class="cat-space">
+                    <div class="cat">😴</div>
+                    <div class="status">Сладко спит...</div>
+                </div>
+            </div>
+
+            <div class="room">
+                <div class="room-info">
+                    <div class="room-name">🎮 Детская</div>
+                </div>
+                <div class="cat-space">
+                    <div class="cat">😪</div>
+                    <div class="status">Видит сны...</div>
+                </div>
+            </div>
+
+            <div class="room">
+                <div class="room-info">
+                    <div class="room-name">💼 Кабинет</div>
+                </div>
+                <div class="cat-space">
+                    <div class="cat">😾</div>
+                    <div class="status">Дремлет в кресле...</div>
+                </div>
+            </div>
+
+            <div class="room">
+                <div class="room-info">
+                    <div class="room-name">🍽️ Кухня</div>
+                </div>
+                <div class="cat-space">
+                    <div class="cat">😺</div>
+                    <div class="status">Спит у миски...</div>
+                </div>
+            </div>
+
+            <div class="room">
+                <div class="room-info">
+                    <div class="room-name">🛋️ Гостиная</div>
+                </div>
+                <div class="cat-space">
+                    <div class="cat">🐱</div>
+                    <div class="status">Спит на диване...</div>
+                </div>
+            </div>
+
+            <div class="room">
+                <div class="room-info">
+                    <div class="room-name">📚 Библиотека</div>
+                </div>
+                <div class="cat-space">
+                    <div class="cat">😸</div>
+                    <div class="status">Заснул за книгой...</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            Разбужено котиков: <span id="catsCount">0</span> из 6
+        </div>
+
+        <!-- Гуляющие котики -->
+        <div class="walking-cats">
+            <div class="walking-cat cat1">😴</div>
+            <div class="walking-cat cat2">😪</div>
+            <div class="walking-cat cat3">😾</div>
+            <div class="walking-cat cat4">😺</div>
+            <div class="walking-cat cat5">🐱</div>
+            <div class="walking-cat cat6">😸</div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

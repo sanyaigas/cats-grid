@@ -1,0 +1,198 @@
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background-color: #000033;
+    transition: background-color 3s;
+}
+
+.container {
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.header {
+    text-align: center;
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+.audio-control {
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.music-button {
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: 2px solid #8B4513;
+    background-color: white;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.music-button:hover {
+    background-color: #FFF5E6;
+}
+
+input[type="range"] {
+    width: 100px;
+}
+
+.rooms-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+    background-color: #DEB887;
+    border-radius: 15px;
+}
+
+.room {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 3px solid #8B4513;
+}
+
+.room:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.room-info {
+    border-bottom: 2px dashed #8B4513;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.room-name {
+    font-size: 18px;
+    color: #8B4513;
+    font-weight: bold;
+}
+
+.cat-space {
+    text-align: center;
+    padding: 15px;
+    background-color: #FFF5E6;
+    border-radius: 10px;
+    margin: 10px 0;
+}
+
+.cat {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.status {
+    color: #666;
+    font-size: 14px;
+}
+
+.room.awake {
+    border-color: #4CAF50;
+    background-color: #F0F7FF;
+}
+
+.footer {
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+    margin-top: 20px;
+    text-align: center;
+    font-size: 18px;
+}
+
+/* Анимация для котика при пробуждении */
+/* Полоска с гуляющими котиками */
+.walking-cats {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: rgba(255, 255, 255, 0.8);
+    overflow: hidden;
+}
+
+.walking-cat {
+    position: absolute;
+    bottom: 10px;
+    font-size: 30px;
+    animation: walkingAnimation linear infinite;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+/* Котики появляются постепенно при добавлении класса visible */
+.walking-cat.visible {
+    opacity: 1;
+}
+
+/* Разные котики с разной скоростью */
+.cat1 {
+    animation-duration: 15s;
+    animation-delay: 0s;
+}
+
+.cat2 {
+    animation-duration: 20s;
+    animation-delay: -5s;
+}
+
+.cat3 {
+    animation-duration: 17s;
+    animation-delay: -10s;
+}
+
+.cat4 {
+    animation-duration: 22s;
+    animation-delay: -7s;
+}
+
+.cat5 {
+    animation-duration: 19s;
+    animation-delay: -3s;
+}
+
+.cat6 {
+    animation-duration: 16s;
+    animation-delay: -8s;
+}
+
+@keyframes walkingAnimation {
+    from {
+        left: -50px;
+        transform: scaleX(1);
+    }
+
+    49.9% {
+        transform: scaleX(1);
+    }
+
+    50% {
+        left: calc(100% + 50px);
+        transform: scaleX(-1);
+    }
+
+    99.9% {
+        transform: scaleX(-1);
+    }
+
+    to {
+        left: -50px;
+        transform: scaleX(1);
+    }
+}
+
+/* Применяем анимацию к проснувшемуся котику */
+.room.awake .cat {
+    animation: bounce 0.5s;
+}
